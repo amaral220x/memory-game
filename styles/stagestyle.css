@@ -1,6 +1,9 @@
 body{
     text-align: center;
 }
-img{
+.card{
     border:4px solid black;
+    float: left;
+    width: 25%;
+    box-sizing: border-box;  
 }
