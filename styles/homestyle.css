@@ -1,3 +1,22 @@
 body{
     text-align: center;
+    font-family: Luckiest Guy;
+    background-image:url('../cards/background.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    box-sizing: border-box;
+}
+#stageselection{
+    width: 800px;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.select{
+    width: 50%;
+    height: 50%;
+
 }

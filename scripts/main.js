@@ -21,7 +21,7 @@ function mix(a) {
 
 function addDivs() {
     let classBox = document.getElementsByClassName("box")
-    let qnt = 12
+    let qnt = 16
     for (let indexI = 0; indexI < qnt; indexI++) {//this loop create automatically all divs and class of the stage, with DOM
         let divAdd = document.createElement('div')
         divAdd.className = 'card';
@@ -75,7 +75,7 @@ function restaureCards(){
         fCard.classList.remove('flip');
         sCard.classList.remove('flip');
         resetCards();
-    }, 1500);   
+    }, 1400);   
 }
 
 function resetCards(){
@@ -97,13 +97,13 @@ function removeEvent(){
 
 function addImagesAndEvents(){   
     
-    let qnt = 12;//quantity of cards. quantity = pairs * 2
+    let qnt = 16;//quantity of cards. quantity = pairs * 2
     var deck = [];//deck array
 
-    for (var i = 0; i < 8; i++) {// the deck array will be fill with the source of all images 
+    for (var i = 0; i < qnt / 2; i++) {// the deck array will be fill with the source of all images 
         var j = i + 1;
-        deck[i] = "..\\cards\\stage1\\card" + j + ".svg";
-        deck[11 - i] = "..\\cards\\stage1\\card" + j + ".svg";
+        deck[i] = "..\\cards\\cardspulp\\card" + j + ".gif";
+        deck[qnt - 1 - i] = "..\\cards\\cardspulp\\card" + j + ".gif";
     }
     mix(deck);
 
@@ -113,14 +113,15 @@ function addImagesAndEvents(){
         let frontDiv = document.getElementsByClassName('front') ;
         let backDiv = document.getElementsByClassName('back');
         imgAdd.setAttribute('src',deck[indexI]);
-        imgFront.setAttribute('src', "..\\cards\\stage1\\frontcard.svg");
+        imgFront.setAttribute('src', "..\\cards\\cardspulp\\frontcardpulp.gif");
         frontDiv[indexI].appendChild(imgFront);
         backDiv[indexI].appendChild(imgAdd);
     }
     var classCard = document.querySelectorAll('.card');
     classCard.forEach(card => card.addEventListener('click',cardFlip));// this loop add a event click in all cards
 
-    for(let i = 0; i < 12; i++){//this loop add the atribute id for a possible comparation,with Dom 
+    for(let i = 0; i < qnt; i++){//this loop add the atribute id for a possible comparation,with Dom 
         classCard[i].setAttribute('id', deck[i]);
+        let a = 100 / (qnt / 4) ;
     }
 }

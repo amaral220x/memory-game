@@ -8,14 +8,22 @@ body{
     height: 100vh;
     display: flex;
     background: orange;
+    background-image: url("../cards/cardspulp/backgroundpulp.gif.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    box-sizing: border-box;
+
 }
 img{
     width: 100%;
+    height: 100%;
     margin: auto; 
 }
 .box{
-    width: 640px;
-    height: 640px;
+    width: 800px;
+    height: 800px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -23,12 +31,15 @@ img{
 }
 .card{
     width: calc(25% - 10px);
-    height: calc(33.33% - 10px);
+    height: calc(25% - 10px);
     margin: 5px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .5s;
+    transition: transform .6s;
+}
+.card:hover{
+    transform: scale(1.1);
 }
 .card:active{
     transform: scale(.93);
@@ -44,7 +55,6 @@ img{
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: orangered;
     backface-visibility: hidden; 
 }
 .back{
