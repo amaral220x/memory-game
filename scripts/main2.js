@@ -56,12 +56,10 @@ function cardFlip(){
         testCards();
     }
 }
-var points=0;
 
 function testCards(){
     if(fCard.id === sCard.id){
         //the cards are equals 
-        points ++;
         removeEvent();
     }  
     else{
@@ -106,8 +104,8 @@ function addImagesAndEvents(){
 
     for (var i = 0; i < qnt / 2; i++) {// the deck array will be fill with the source of all images 
         var j = i + 1;
-        deck[i] = "..\\cards\\cardspulp\\card" + j + ".gif";
-        deck[qnt - 1 - i] = "..\\cards\\cardspulp\\card" + j + ".gif";
+        deck[i] = "..\\cards\\cardsdjango\\card" + j + ".gif";
+        deck[qnt - 1 - i] = "..\\cards\\cardsdjango\\card" + j + ".gif";
     }
     mix(deck);
 
@@ -117,7 +115,7 @@ function addImagesAndEvents(){
         let frontDiv = document.getElementsByClassName('front') ;
         let backDiv = document.getElementsByClassName('back');
         imgAdd.setAttribute('src',deck[indexI]);
-        imgFront.setAttribute('src', "..\\cards\\cardspulp\\frontcardpulp.gif");
+        imgFront.setAttribute('src','../cards/cardsdjango/frontcarddjango.gif');
         frontDiv[indexI].appendChild(imgFront);
         backDiv[indexI].appendChild(imgAdd);
     }

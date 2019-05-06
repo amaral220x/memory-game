@@ -1,6 +1,11 @@
+@font-face{
+    font-family: Busorama;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/busorama.ttf');
+}
 body{
     text-align: center;
-    font-family: Luckiest Guy;
     background-image:url('../cards/background.gif');
     background-position: center;
     background-size: cover;
