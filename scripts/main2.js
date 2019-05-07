@@ -85,12 +85,14 @@ function resetCards(){
     fCard = null;
     sCard = null;
 }
+var points=0;
 
 function removeEvent(){
     //the card equals dont flip never again
     fCard.removeEventListener('click',cardFlip);
     sCard.removeEventListener('click', cardFlip);
     resetCards();
+    points ++;
     if(points == 8){
         alert('Você venceu!');
     }

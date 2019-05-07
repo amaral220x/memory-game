@@ -1,7 +1,16 @@
+let sound = new buzz.sound('../sounds/misirlou8bit.mp3');
+let volume = 30; 
+
 function game() {
     addDivs();
     addImagesAndEvents();
+    sound.all().setVolume(volume);
+    sound.stop()
+    sound.play()
 }
+
+
+
 
 function aleatorioInt(min, max) {
     return min + (~~(Math.random() * (max - min)));
