@@ -1,3 +1,9 @@
+@font-face{
+    font-family: Busorama;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/busorama.ttf');
+}
 *{
     padding: 0;
     margin: 0;
@@ -58,4 +64,22 @@ img{
 }
 .back{
     transform: rotateY(180deg);
+}
+
+#sound{
+    width: 80px;
+    height: 80px;
+    margin-top: 5%;
+    margin-left: 5%;
+    position: relative;
+}
+#sound:hover{
+    transform: scale(1.2);
+}
+video{
+    margin: auto;
+}
+
+#congrats{
+    margin: auto;
 }

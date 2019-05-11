@@ -40,6 +40,8 @@ function addDivs() {
 let flipped = false; //if the card flip
 let fCard, sCard; // firstcard and secundcard
 let block = false; //block cardflip
+let auxSound = false;
+let backSound = new Audio('..\\sounds\\freedom8bit.mp3');
 
 function cardFlip(){
     if(block) return;
@@ -57,9 +59,27 @@ function cardFlip(){
     }
 }
 
+function playSound(){
+    var speaker = document.getElementById('sound');
+    if(auxSound == false){
+        backSound.play();
+        auxSound = true;
+        speaker.setAttribute('src', '..\\cards\\speakerIconOn.png');
+    }
+    else{
+        backSound.pause();
+        auxSound = false;
+        speaker.setAttribute('src', '..\\cards\\speakerIconOff.png');
+    }
+
+}
+
 function testCards(){
     if(fCard.id === sCard.id){
         //the cards are equals 
+        var p = document.getElementById('points');
+        points ++;
+        p.textContent = points;
         removeEvent();
     }  
     else{
@@ -92,10 +112,12 @@ function removeEvent(){
     fCard.removeEventListener('click',cardFlip);
     sCard.removeEventListener('click', cardFlip);
     resetCards();
-    points ++;
-    if(points == 8){
-        alert('Você venceu!');
-    }
+    setTimeout(() =>{
+        if(points == 8){
+          alert('Você venceu!');
+          window.location.assign("windjango.html");
+      }
+    }, 1200);
 }
 
 
